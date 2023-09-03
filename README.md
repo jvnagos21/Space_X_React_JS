@@ -1,2 +1,3 @@
-# Space_X_React_JS
-Space X React Project 🚀
+# Space X React Project 🚀
+
+Website project using Space X API. 
