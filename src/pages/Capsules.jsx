@@ -21,7 +21,7 @@ export default function Capsules() {
       ) : (
         <section className="py-32">
           <h1 className="heading text-center mb-10">Capsules</h1>
-          <div className="max-width grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="max-width grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 px-5">
             {capsules.map(
               ({
                 id,
