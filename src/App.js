@@ -1,4 +1,4 @@
-import { Error, Homepage, Capsules, Cores } from "./pages";
+import { Error, Homepage, Capsules, Cores, Crew } from "./pages";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Header } from "./components";
 
@@ -11,6 +11,7 @@ function App() {
         <Route path="/*" element={<Error />}></Route>
         <Route path="/capsules" element={<Capsules />}></Route>
         <Route path="/cores" element={<Cores />}></Route>
+        <Route path="/crew" element={<Crew />}></Route>
       </Routes>
     </BrowserRouter>
   );
