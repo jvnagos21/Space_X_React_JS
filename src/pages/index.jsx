@@ -4,5 +4,6 @@ import Capsules from "./Capsules";
 import Cores from "./Cores";
 import Crew from "./Crew";
 import SingleCrew from "./SingleCrew";
+import Dragons from "./Dragons";
 
-export { Error, Homepage, Capsules, Cores, Crew, SingleCrew };
+export { Error, Homepage, Capsules, Cores, Crew, SingleCrew, Dragons };
