@@ -19,7 +19,7 @@ export default function Dragons() {
         <h1 className="heading text-center mb-10">Dragons</h1>
         <div className="max-width grid grid-cols-1 gap-5 md:grid-cols-2 px-5">
           {dragons.map(({ id, name, flickr_images, description }) => (
-            <Link to="" key={id}>
+            <Link to={`/dragons/${id}`} key={id}>
               <article>
                 <img
                   src={flickr_images[0]}
@@ -34,7 +34,7 @@ export default function Dragons() {
                     0,
                     200
                   )}...`}</p>
-                  <Link to="" className="btn">
+                  <Link to={`/dragons/${id}`} className="btn">
                     Read more &rarr;
                   </Link>
                 </div>
