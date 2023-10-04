@@ -4,6 +4,7 @@ import { Loading } from "../components";
 
 export default function SingleDragon() {
   const [singleDragon, setSingleDragon] = useState(null);
+  const [toggle, setToggle] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -31,7 +32,8 @@ export default function SingleDragon() {
               <ul className="text-sm text-white opacity-75 capitalize flex flex-col items-start justify-start gap-3">
                 <li>Type: {singleDragon.type}</li>
                 <li>Crew: {singleDragon.crew_capacity}</li>
-                <li>Dry Mass: {singleDragon.dry_mass_lb}</li>
+                {!toggle && <li>Dry Mass: {singleDragon.dry_mass_kg} kg</li>}
+                {toggle && <li>Dry Mass: {singleDragon.dry_mass_lb} lb</li>}
                 {singleDragon.active ? (
                   <li className="text-emerald-500">Active</li>
                 ) : (
@@ -69,66 +71,98 @@ export default function SingleDragon() {
             </p>
             <div className="opacity-75 text-white text-sm">
               {/* meters*/}
-              <ul className="grid grid-cols-2 gap-8">
-                <li>
-                  Launch Payload Mass: {singleDragon.launch_payload_mass.kg} kg
-                </li>
-                <li>
-                  Return Payload Mass:{singleDragon.return_payload_mass.kg}kg
-                </li>
-                <li>
-                  Pressurized Capsule Payload Volume:{" "}
-                  {singleDragon.pressurized_capsule.payload_volume.cubic_meters}
-                  m<sup>3</sup>
-                </li>
-                <li>
-                  Height With Trunk: {singleDragon.height_w_trunk.meters}m
-                </li>
-                <li>
-                  Launch Payload Volume:{" "}
-                  {singleDragon.launch_payload_vol.cubic_meters}m<sup>3</sup>
-                </li>
-                <li>
-                  Return Payload Volume:{" "}
-                  {singleDragon.pressurized_capsule.payload_volume.cubic_meters}
-                  m<sup>3</sup>
-                </li>
-                <li>
-                  Trunk Volume: {singleDragon.trunk.trunk_volume.cubic_meters}m
-                  <sup>3</sup>
-                </li>
-                <li>Diameter: {singleDragon.diameter.meters}m</li>
-              </ul>
+              {!toggle && (
+                <ul className="grid grid-cols-2 gap-8">
+                  <li>
+                    Launch Payload Mass: {singleDragon.launch_payload_mass.kg}{" "}
+                    kg
+                  </li>
+                  <li>
+                    Return Payload Mass:{singleDragon.return_payload_mass.kg}kg
+                  </li>
+                  <li>
+                    Pressurized Capsule Payload Volume:{" "}
+                    {
+                      singleDragon.pressurized_capsule.payload_volume
+                        .cubic_meters
+                    }
+                    m<sup>3</sup>
+                  </li>
+                  <li>
+                    Height With Trunk: {singleDragon.height_w_trunk.meters}m
+                  </li>
+                  <li>
+                    Launch Payload Volume:{" "}
+                    {singleDragon.launch_payload_vol.cubic_meters}m<sup>3</sup>
+                  </li>
+                  <li>
+                    Return Payload Volume:{" "}
+                    {
+                      singleDragon.pressurized_capsule.payload_volume
+                        .cubic_meters
+                    }
+                    m<sup>3</sup>
+                  </li>
+                  <li>
+                    Trunk Volume: {singleDragon.trunk.trunk_volume.cubic_meters}
+                    m<sup>3</sup>
+                  </li>
+                  <li>Diameter: {singleDragon.diameter.meters}m</li>
+                </ul>
+              )}
 
               {/*IMPERIAL*/}
-              <ul className="grid grid-cols-2 gap-8">
-                <li>
-                  Launch Payload Mass: {singleDragon.launch_payload_mass.lb} lb
-                </li>
-                <li>
-                  Return Payload Mass:{singleDragon.return_payload_mass.lb}lb
-                </li>
-                <li>
-                  Pressurized Capsule Payload Volume:{" "}
-                  {singleDragon.pressurized_capsule.payload_volume.cubic_feet}ft
-                  <sup>3</sup>
-                </li>
-                <li>Height With Trunk: {singleDragon.height_w_trunk.feet}ft</li>
-                <li>
-                  Launch Payload Volume:{" "}
-                  {singleDragon.launch_payload_vol.cubic_feet}ft<sup>3</sup>
-                </li>
-                <li>
-                  Return Payload Volume:{" "}
-                  {singleDragon.return_payload_vol.cubic_feet}ft<sup>3</sup>
-                </li>
-                <li>
-                  Trunk Volume: {singleDragon.trunk.trunk_volume.cubic_feet}ft
-                  <sup>3</sup>
-                </li>
-                <li>Diameter: {singleDragon.diameter.feet}lb</li>
-              </ul>
+              {toggle && (
+                <ul className="grid grid-cols-2 gap-8">
+                  <li>
+                    Launch Payload Mass: {singleDragon.launch_payload_mass.lb}{" "}
+                    lb
+                  </li>
+                  <li>
+                    Return Payload Mass:{singleDragon.return_payload_mass.lb}lb
+                  </li>
+                  <li>
+                    Pressurized Capsule Payload Volume:{" "}
+                    {singleDragon.pressurized_capsule.payload_volume.cubic_feet}
+                    ft
+                    <sup>3</sup>
+                  </li>
+                  <li>
+                    Height With Trunk: {singleDragon.height_w_trunk.feet}ft
+                  </li>
+                  <li>
+                    Launch Payload Volume:{" "}
+                    {singleDragon.launch_payload_vol.cubic_feet}ft<sup>3</sup>
+                  </li>
+                  <li>
+                    Return Payload Volume:{" "}
+                    {singleDragon.return_payload_vol.cubic_feet}ft<sup>3</sup>
+                  </li>
+                  <li>
+                    Trunk Volume: {singleDragon.trunk.trunk_volume.cubic_feet}ft
+                    <sup>3</sup>
+                  </li>
+                  <li>Diameter: {singleDragon.diameter.feet}lb</li>
+                </ul>
+              )}
             </div>
+            <ul className="mt-8 flex items-center justify-start gap-4">
+              <li>
+                {" "}
+                <button className="btn" onClick={() => setToggle(!toggle)}>
+                  {toggle ? "Show Metric Units" : "Show Imperial Units"}
+                </button>
+              </li>
+              <li>
+                {" "}
+                <Link
+                  to="/dragons"
+                  className="text-white opacity-75 text-sm hover:opacity-100"
+                >
+                  &larr; Back
+                </Link>
+              </li>
+            </ul>
           </article>
           <article>
             <img src={singleDragon.flickr_images[0]} alt={singleDragon.name} />
