@@ -5,6 +5,7 @@ import { Loading } from "../components";
 export default function SingleDragon() {
   const [singleDragon, setSingleDragon] = useState(null);
   const [toggle, setToggle] = useState(false);
+  const [value, setValue] = useState(0);
   const { id } = useParams();
 
   useEffect(() => {
@@ -165,7 +166,26 @@ export default function SingleDragon() {
             </ul>
           </article>
           <article>
-            <img src={singleDragon.flickr_images[0]} alt={singleDragon.name} />
+            <img
+              src={singleDragon.flickr_images[value]}
+              alt={singleDragon.name}
+              className="h-96 object-cover"
+            />
+            <ul className="flex flex-wrap items-center justify-start gap-3 mt-5">
+              {singleDragon.flickr_images.map((image, index) => (
+                <li
+                  key={index}
+                  onClick={() => setValue(index)}
+                  className={`${index === value && "p-1 bg-white"}`}
+                >
+                  <img
+                    src={image}
+                    alt={singleDragon.name}
+                    className="w-28 h-20 object-cover cursor-pointer"
+                  />
+                </li>
+              ))}
+            </ul>
           </article>
         </section>
       )}
