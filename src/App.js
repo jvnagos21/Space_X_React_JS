@@ -7,6 +7,8 @@ import {
   SingleCrew,
   Dragons,
   SingleDragon,
+  Landpads,
+  SingleLandpad,
 } from "./pages";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Header } from "./components";
@@ -24,6 +26,8 @@ function App() {
         <Route path="/crew/:id" element={<SingleCrew />}></Route>
         <Route path="/dragons" element={<Dragons />}></Route>
         <Route path="/dragons/:id" element={<SingleDragon />}></Route>
+        <Route path="/landpads" element={<Landpads />}></Route>
+        <Route path="/landpads/:id" element={<SingleLandpad />}></Route>
       </Routes>
     </BrowserRouter>
   );

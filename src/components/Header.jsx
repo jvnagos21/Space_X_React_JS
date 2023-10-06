@@ -34,7 +34,9 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link></Link>
+              <Link to="/landpads" className="text-white text-sm lg:text-base">
+                Landpads
+              </Link>
             </li>
             <li>
               <Link></Link>
