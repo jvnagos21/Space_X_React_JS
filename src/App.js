@@ -9,6 +9,8 @@ import {
   SingleDragon,
   Landpads,
   SingleLandpad,
+  Launches,
+  SingleLaunch,
 } from "./pages";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Header } from "./components";
@@ -28,6 +30,8 @@ function App() {
         <Route path="/dragons/:id" element={<SingleDragon />}></Route>
         <Route path="/landpads" element={<Landpads />}></Route>
         <Route path="/landpads/:id" element={<SingleLandpad />}></Route>
+        <Route path="/launches" element={<Launches />}></Route>
+        <Route path="/launches/:id" element={<SingleLaunch />}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -8,6 +8,8 @@ import Dragons from "./Dragons";
 import SingleDragon from "./SingleDragon";
 import Landpads from "./Landpads";
 import SingleLandpad from "./SingleLandpad";
+import Launches from "./Launches";
+import SingleLaunch from "./SingleLaunch";
 
 export {
   Error,
@@ -20,4 +22,6 @@ export {
   SingleDragon,
   Landpads,
   SingleLandpad,
+  Launches,
+  SingleLaunch,
 };
