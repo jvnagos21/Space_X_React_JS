@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Loading } from "../components";
+import { format } from "date-fns";
 
 export default function SingleLaunch() {
   const [singleLaunch, setSingleLaunch] = useState(null);
@@ -22,13 +23,24 @@ export default function SingleLaunch() {
       ) : (
         <section className="py-32 max-width grid grid-cols-1 gap-10 md:grid-cols-2">
           <article>
-            <img src={singleLaunch.links.patch.large} alt={singleLaunch.name} />
+            {singleLaunch.links.patch.large ? (
+              <img
+                src={singleLaunch.links.patch.large}
+                alt={singleLaunch.name}
+              />
+            ) : (
+              <img
+                src="https://images2.imgbox.com/5b/02/QcxHUb5V_o.png"
+                alt=""
+              />
+            )}
           </article>
           <article>
             <h1 className="heading">{singleLaunch.name}</h1>
             <h2 className="text-white font-bold text-2xl opacity-75 mt-2">
               {" "}
-              Launch Date: {singleLaunch.date_local},{" "}
+              Launch Date:{" "}
+              {format(new Date(singleLaunch.date_local), "dd MMMM yyyy")},{" "}
               {singleLaunch.success ? (
                 <span className="text-emerald-500">Sucessful</span>
               ) : (
@@ -41,13 +53,19 @@ export default function SingleLaunch() {
             <ul className="text-white text-sm opacity-75 mb-8">
               <li className="mb-3">
                 Fairings:{" "}
-                {singleLaunch.fairings.reused ? "Not Reused" : "Reused"}
+                {singleLaunch.fairings
+                  ? `${singleLaunch.fairings.reused ? "Reused" : "Not Reused"}`
+                  : "No Fairing Used"}
               </li>
-              <li>
+              <li className="mb-3">
                 Recovered:{" "}
-                {singleLaunch.fairings.recovered
-                  ? "Fairings Not Recovered"
-                  : "Fairings Recovered"}
+                {singleLaunch.fairings
+                  ? `${
+                      singleLaunch.fairings.recovered
+                        ? "Recovered"
+                        : "Not Recovered"
+                    }`
+                  : "No Fairing Used"}
               </li>
             </ul>
             <ul className="flex flex-wrap items-center justify-start gap-8">
@@ -82,6 +100,14 @@ export default function SingleLaunch() {
                 >
                   Watch Launch on Youtube
                 </a>
+              </li>
+              <li>
+                <Link
+                  to="/launches"
+                  className="text-white opacity-75 text-sm hover:opacity-100"
+                >
+                  &larr; Back
+                </Link>
               </li>
             </ul>
           </article>
