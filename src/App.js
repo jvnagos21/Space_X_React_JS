@@ -11,6 +11,8 @@ import {
   SingleLandpad,
   Launches,
   SingleLaunch,
+  Launchpads,
+  SingleLaunchpad,
 } from "./pages";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Header } from "./components";
@@ -32,6 +34,8 @@ function App() {
         <Route path="/landpads/:id" element={<SingleLandpad />}></Route>
         <Route path="/launches" element={<Launches />}></Route>
         <Route path="/launches/:id" element={<SingleLaunch />}></Route>
+        <Route path="/launchpads" element={<Launchpads />}></Route>
+        <Route path="/launchpads/:id" element={<SingleLaunchpad />}></Route>
       </Routes>
     </BrowserRouter>
   );

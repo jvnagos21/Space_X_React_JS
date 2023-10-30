@@ -10,6 +10,8 @@ import Landpads from "./Landpads";
 import SingleLandpad from "./SingleLandpad";
 import Launches from "./Launches";
 import SingleLaunch from "./SingleLaunch";
+import Launchpads from "./Launchpads";
+import SingleLaunchpad from "./SingleLaunchpad";
 
 export {
   Error,
@@ -24,4 +26,6 @@ export {
   SingleLandpad,
   Launches,
   SingleLaunch,
+  Launchpads,
+  SingleLaunchpad,
 };

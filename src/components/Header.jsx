@@ -44,7 +44,12 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link></Link>
+              <Link
+                to="/launchpads"
+                className="text-white text-sm lg:text-base"
+              >
+                Launchpads
+              </Link>
             </li>
             <li>
               <Link></Link>
