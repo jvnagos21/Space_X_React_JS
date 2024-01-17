@@ -68,13 +68,10 @@ export default function Homepage() {
                       <a href={company.links.website}>Website</a>
                     </li>
                     <li className="mb-1" href={company.links.flickr}>
-                      flickr
-                    </li>
-                    <li className="mb-1" href={company.links.twitter}>
-                      Twitter
+                      <a href={company.links.flickr}>flickr</a>
                     </li>
                     <li className="mb-1" href={company.links.elon_twitter}>
-                      Elon twitter
+                      <a href={company.links.elon_twitter}>Elon twitter</a>
                     </li>
                   </ul>
                 </article>
