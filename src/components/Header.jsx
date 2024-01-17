@@ -52,7 +52,9 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link></Link>
+              <Link to="/payloads" className="text-white text-sm lg:text-base">
+                Payloads
+              </Link>
             </li>
             <li>
               <Link></Link>

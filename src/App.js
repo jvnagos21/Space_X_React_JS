@@ -13,6 +13,7 @@ import {
   SingleLaunch,
   Launchpads,
   SingleLaunchpad,
+  Payloads,
 } from "./pages";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Header } from "./components";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/launches/:id" element={<SingleLaunch />}></Route>
         <Route path="/launchpads" element={<Launchpads />}></Route>
         <Route path="/launchpads/:id" element={<SingleLaunchpad />}></Route>
+        <Route path="/payloads" element={<Payloads />}></Route>
       </Routes>
     </BrowserRouter>
   );
