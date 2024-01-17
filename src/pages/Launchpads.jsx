@@ -28,7 +28,7 @@ export default function Launchpads() {
                       0,
                       50
                     )}...`}</p>
-                    <Link to={`launchpads/${id}`} className="btn">
+                    <Link to={`/launchpads/${id}`} className="btn">
                       Read More &rarr;
                     </Link>
                   </div>
