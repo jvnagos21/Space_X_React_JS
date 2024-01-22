@@ -13,6 +13,7 @@ import SingleLaunch from "./SingleLaunch";
 import Launchpads from "./Launchpads";
 import SingleLaunchpad from "./SingleLaunchpad";
 import Payloads from "./Payloads";
+import Roadster from "./Roadster";
 
 export {
   Error,
@@ -30,4 +31,5 @@ export {
   Launchpads,
   SingleLaunchpad,
   Payloads,
+  Roadster,
 };

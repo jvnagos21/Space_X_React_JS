@@ -14,6 +14,7 @@ import {
   Launchpads,
   SingleLaunchpad,
   Payloads,
+  Roadster,
 } from "./pages";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Header } from "./components";
@@ -38,6 +39,7 @@ function App() {
         <Route path="/launchpads" element={<Launchpads />}></Route>
         <Route path="/launchpads/:id" element={<SingleLaunchpad />}></Route>
         <Route path="/payloads" element={<Payloads />}></Route>
+        <Route path="/roadster" element={<Roadster />}></Route>
       </Routes>
     </BrowserRouter>
   );
