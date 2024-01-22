@@ -70,8 +70,11 @@ export default function Homepage() {
                     <li className="mb-1" href={company.links.flickr}>
                       <a href={company.links.flickr}>flickr</a>
                     </li>
+                    <li className="mb-1" href={company.links.twitter}>
+                      <a href={company.links.twitter}>Space X twitter</a>
+                    </li>
                     <li className="mb-1" href={company.links.elon_twitter}>
-                      <a href={company.links.elon_twitter}>Elon twitter</a>
+                      <a href={company.links.elon_twitter}>Elon Musk twitter</a>
                     </li>
                   </ul>
                 </article>
