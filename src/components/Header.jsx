@@ -62,7 +62,9 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link></Link>
+              <Link to="/rockets" className="text-white text-sm lg:text-base">
+                Rockets
+              </Link>
             </li>
             <li>
               <Link></Link>
